@@ -1,6 +1,6 @@
 import React from "react";
 import GlobalState from "./Context/GlobalState";
-import { Router } from "./Routes/Router";
+import { Router } from "./Router/Routes";
 
 const App = () => {
   return (
