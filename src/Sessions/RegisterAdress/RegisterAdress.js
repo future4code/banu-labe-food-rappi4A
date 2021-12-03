@@ -24,6 +24,7 @@ const AddressPage = () => {
   const onSubmitForm = (event) => {
     event.preventDefault()
     addAddress()
+    alert("Endereço cadastrado com sucesso!")
   }
   const addAddress = () => {
     axios.put(`${BASE_URL}/address`, form, {

@@ -29,6 +29,7 @@ const LoginForm = () => {
                 clear();
                 setIsloading(false);
                 // goToFeed(history);
+                alert("Login efetuado")
             })
             .catch((err) => {
                 alert("Erro no login!");
