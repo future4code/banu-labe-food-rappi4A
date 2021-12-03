@@ -4,13 +4,10 @@ import {
   goToCart,
   goToLogin,
   goToProfile,
-  goToRegisterAdress,
-  goToSingUp,
+  goToAddress,
+  goToSignUp,
   goToToEdit,
-} from "../../Routes/Coordinate";
-import { BASE_URL } from '../../Constants/Url';
-import axios from "axios";
-import useRequestData from "../../Hooks/useRequestData";
+
 
 const Home = () => {
   const history = useHistory();
@@ -51,13 +48,14 @@ const Home = () => {
       <button onClick={() => goToLogin(history)}>Login</button>
       <button onClick={() => goToCart(history)}>Cart</button>
       <button onClick={() => goToProfile(history)}>Profile</button>
-      <button onClick={() => goToRegisterAdress(history)}>
+      <button onClick={() => goToAddress(history)}>
         Registrar endereço
       </button>
-      <button onClick={() => goToSingUp(history)}>Cadastro</button>
+      <button onClick={() => goToSignUp(history)}>Cadastro</button>
       <button onClick={() => goToToEdit(history)}>To edit</button>
     </div>
   );
 };
+
 
 export default Home;

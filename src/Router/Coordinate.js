@@ -10,18 +10,25 @@ export const goToProfile = (history) => {
   history.push("/profile/:id");
 };
 
-export const goToRegisterAdress = (history) => {
-  history.push("/register-adress");
+export const goToAddress = (history) => {
+  history.push("/endereço");
 };
 
 export const goToSearch = (history) => {
   history.push("/search");
 };
 
-export const goToSingUp = (history) => {
-  history.push("/sing-up");
+export const goToSignUp = (history) => {
+  history.push("/cadastro");
 };
 
 export const goToToEdit = (history) => {
   history.push("/to-edit");
+};
+// export const goToFeed = (history) => {
+//   history.push("/feed");
+
+// };
+export const goToBack = (history) => {
+  history.goBack();
 };

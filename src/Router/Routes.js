@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "../Sessions/Home/Home";
 import Cart from "../Sessions/Cart/Cart";
-import Login from "../Sessions/Login/Login";
-import SingUp from "../Sessions/SingUp/SingUp";
+import Login from "../Sessions/Login/LoginPage";
+import SignUpPage from "../Sessions/SingUp/SignUpPage";
 import ToEdit from "../Sessions/ToEdit/ToEdit";
 import Search from "../Sessions/Search/Search";
 import Profile from "../Sessions/Profile/Profile";
@@ -21,7 +21,9 @@ export const Router = () => {
         <Route exact path={"/login"}>
           <Login />
         </Route>
-
+        <Route exact path="/endereço">
+          <RegisterAdress />
+        </Route>
         <Route exact path={"/cart"}>
           <Cart />
         </Route>
@@ -30,16 +32,16 @@ export const Router = () => {
           <Profile />
         </Route>
 
-        <Route exact path={"/register-adress"}>
+        {/* <Route exact path={"/register-adress"}>
           <RegisterAdress />
-        </Route>
+        </Route> */}
 
         <Route exact path={"/search"}>
           <Search />
         </Route>
 
-        <Route exact path={"/sing-up"}>
-          <SingUp />
+        <Route exact path="/cadastro">
+          <SignUpPage />
         </Route>
 
         <Route exact path={"/to-edit"}>
