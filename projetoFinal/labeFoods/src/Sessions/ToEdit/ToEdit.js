@@ -3,6 +3,14 @@ import { BASE_URL } from "../../Constants/Url";
 import { goToProfile } from "../../Router/Coordinate";
 import React, { useState, useEffect } from "react";
 import useForm from "../../Hooks/useForm";
+import { Formulario } from "styled";
+
+export const Formulario = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ToEdit = () => {
   const { form, onChangeInput, clear } = useForm({
@@ -40,7 +48,7 @@ const ToEdit = () => {
   };
 
   return (
-    <div>
+    <Formulario>
       <form onSubmit={updateProfile}>
         <input
           name="name"
@@ -68,7 +76,7 @@ const ToEdit = () => {
 
         <button>Enviar</button>
       </form>
-    </div>
+    </Formulario>
   );
 };
 
