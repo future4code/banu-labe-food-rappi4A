@@ -22,7 +22,7 @@ const Restaurants = () => {
             return (
             <div>
                 <p>{rl.name}</p>
-                <img src={rl.logoUrl} onClick={() => {goToDetails(history)}}></img>
+                <img src={rl.logoUrl} onClick={() => {goToDetails(history, rl.id)}}></img>
                 <p>Tempo de entrega: {rl.deliveryTime} minutos</p>
             </div>
             )

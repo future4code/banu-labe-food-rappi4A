@@ -24,7 +24,7 @@ const RestaurantsDetails = () => {
  const getDetails = () => {
     axios.get(`${BASE_URL}/restaurants/${params.restaurantId}`, headers )
     .then((res) => {
-      setRestaurantsDetails(res.data)
+      setRestaurantsDetails(res.data.restaurant)
       console.log(res.data)
     })
     .catch((err) => {
@@ -34,7 +34,16 @@ const RestaurantsDetails = () => {
 
   return (
     <div>
-    
+    {restaurantsDetails && restaurantsDetails.products.map((rd) => {
+      return <div>
+
+        <p>{rd.name}</p>
+        <img src={rd.photoUrl}></img>
+        <p>{rd.description}</p>
+        <p>{rd.price}</p>
+
+      </div>
+    })}
     
 
     </div>
