@@ -7,7 +7,8 @@ import ToEdit from "../Sessions/ToEdit/ToEdit";
 import Search from "../Sessions/Search/Search";
 import Profile from "../Sessions/Profile/Profile";
 import RegisterAdress from "../Sessions/RegisterAdress/RegisterAdress";
-
+import Restaurants from "../Sessions/Restaurants/Restaurants";
+import EditAddress from "../Sessions/ToEdit/EditAddress";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 export const Router = () => {
@@ -32,6 +33,10 @@ export const Router = () => {
           <Profile />
         </Route>
 
+        <Route exact path={"/restaurant"}>
+          <Restaurants />
+        </Route>
+
         {/* <Route exact path={"/register-adress"}>
           <RegisterAdress />
         </Route> */}
@@ -46,6 +51,9 @@ export const Router = () => {
 
         <Route exact path={"/to-edit"}>
           <ToEdit />
+        </Route>
+        <Route exact path={"/editarEndereco"}>
+          <EditAddress />
         </Route>
       </Switch>
     </BrowserRouter>

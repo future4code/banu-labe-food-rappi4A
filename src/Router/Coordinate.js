@@ -32,3 +32,7 @@ export const goToToEdit = (history) => {
 export const goToBack = (history) => {
   history.goBack();
 };
+
+export const goToEditAddress = (history) => {
+  history.push("/editarEndereco");
+};
