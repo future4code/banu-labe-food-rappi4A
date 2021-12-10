@@ -8,7 +8,7 @@ import { BASE_URL } from "../../Constants/Url";
 
 const Restaurants = () => {
 
-    const {restaurantList, setRestaurantList} = useContext(GlobalStateContext)
+    const { restaurantList, setRestaurantList } = useContext(GlobalStateContext)
 
 
 
@@ -16,20 +16,20 @@ const Restaurants = () => {
     return (
         <div>
             <input></input>
-        {restaurantList && restaurantList.map((rl) => {
-            return (
-            <div>
-                <p>{rl.name}</p>
-            </div>
-            )
-        })}
+            {restaurantList && restaurantList.map((rl) => {
+                return (
+                    <div>
+                        <p>{rl.name}</p>
+                    </div>
+                )
+            })}
             <button>Home</button>
             <button>Cart</button>
             <button>Profile</button>
         </div>
-        
+
     )
-            
+
 }
 
 export default Restaurants
