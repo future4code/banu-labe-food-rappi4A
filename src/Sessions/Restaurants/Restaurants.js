@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import GlobalStateContext from "../../Context/GlobalStateContext";
 import useRequestData from "../../Hooks/useRequestData";
 import { BASE_URL } from "../../Constants/Url";
+import { goToDetails } from "../../Router/Coordinate";
+import { useHistory } from "react-router-dom";
 
 
 
@@ -10,7 +12,7 @@ const Restaurants = () => {
 
     const {restaurantList, setRestaurantList} = useContext(GlobalStateContext)
 
-
+    const history = useHistory()
 
 
     return (
@@ -20,6 +22,8 @@ const Restaurants = () => {
             return (
             <div>
                 <p>{rl.name}</p>
+                <img src={rl.logoUrl} onClick={() => {goToDetails(history)}}></img>
+                <p>Tempo de entrega: {rl.deliveryTime} minutos</p>
             </div>
             )
         })}

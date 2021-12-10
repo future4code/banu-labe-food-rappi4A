@@ -32,3 +32,7 @@ export const goToToEdit = (history) => {
 export const goToBack = (history) => {
   history.goBack();
 };
+
+export const goToDetails = (history, restaurantId) => {
+  history.push(`/restaurant/${restaurantId}`)
+}

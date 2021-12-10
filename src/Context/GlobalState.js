@@ -24,6 +24,9 @@ const GlobalState = (props) => {
 
   }, [restaurantList])
 
+
+  
+
   const getRestaurants = () => {
     axios.get(`${BASE_URL}/restaurants`, headers)
     .then((res) => {
@@ -34,6 +37,10 @@ const GlobalState = (props) => {
     })
   }
   
+
+
+
+
 
   const data = {
     restaurantList,
