@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-// import { goToFeed } from "../../Router/Coordinate";
+
 import { useHistory } from "react-router";
 import { BASE_URL } from "../../Constants/Url";
 import { ContainerForm } from "./styled";
 import CircularProgress from "@material-ui/core/CircularProgress";
+
 
 const LoginForm = () => {
     const history = useHistory();
@@ -19,7 +20,7 @@ const LoginForm = () => {
         e.preventDefault();
         login(setIsloading);
     };
-
+    const token = localStorage.getItem("token")
     const login = () => {
         setIsloading(true);
         axios
@@ -28,8 +29,13 @@ const LoginForm = () => {
                 localStorage.setItem("token", res.data.token);
                 clear();
                 setIsloading(false);
-                // goToFeed(history);
+
                 alert("Login efetuado")
+                if (token) {
+                    history.push("/restaurant")
+                } else {
+                    history.push("/login")
+                }
             })
             .catch((err) => {
                 alert("Erro no login!");

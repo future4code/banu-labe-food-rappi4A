@@ -6,6 +6,8 @@ import useRequestData from "../../Hooks/useRequestData";
 import { BASE_URL } from "../../Constants/Url";
 
 const Restaurants = () => {
+
+
   const { restaurantList, setRestaurantList } = useContext(GlobalStateContext);
   const history = useHistory();
 
@@ -29,3 +31,4 @@ const Restaurants = () => {
 };
 
 export default Restaurants;
+
