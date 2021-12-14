@@ -14,7 +14,7 @@ const LoginPage = () => {
 
     return (
         <LoginContainer>
-            <img src={logo} />
+            <img src={logo} alt="logo Rappi4" />
             <TextSignUp>Entrar</TextSignUp>
             <LoginForm />
             <Button
