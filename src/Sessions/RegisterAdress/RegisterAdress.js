@@ -1,6 +1,7 @@
 import React from 'react'
 import { ScreenContainer, InputsContainer } from './styled'
 import useForm from '../../Hooks/useForm'
+import logo from '../../assets/logo.png'
 import axios from 'axios'
 import { BASE_URL } from '../../Constants/Url'
 import { Button, TextField } from '@material-ui/core'
@@ -40,6 +41,7 @@ const AddressPage = () => {
   }
   return (
     <ScreenContainer>
+      <img src={logo} alt="logo Rappi4" />
       <InputsContainer>
         <p>MEU ENDEREÇO</p>
         <form onSubmit={onSubmitForm}>
