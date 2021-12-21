@@ -13,7 +13,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 const LoginForm = () => {
     const history = useHistory();
 
-    const [form, onChange, clear] = useForm({ email: "", password: "" });
+    const { form, onChangeInput, clear } = useForm({ email: "", password: "" });
     const [isLoading, setIsloading] = useState(false);
 
     const onSubmitForm = (e) => {
@@ -41,7 +41,7 @@ const LoginForm = () => {
                 <TextField
                     name={"email"}
                     value={form.email}
-                    onChange={onChange}
+                    onChange={onChangeInput}
                     label={"E-mail"}
                     variant={"outlined"}
                     fullWidth
@@ -52,7 +52,7 @@ const LoginForm = () => {
                 <TextField
                     name={"password"}
                     value={form.password}
-                    onChange={onChange}
+                    onChange={onChangeInput}
                     label={"Senha"}
                     variant={"outlined"}
                     fullWidth

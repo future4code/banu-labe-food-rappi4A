@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/Url";
 import GlobalStateContext from "../../Context/GlobalStateContext";
+import { goToEdit } from "../../Router/Coordinate";
 
 import { useHistory } from "react-router-dom";
 
@@ -39,7 +40,7 @@ const Profile = () => {
       <p>{profileList.address}</p>
       <button
         onClick={() => {
-          goToToEdit(history);
+          goToEdit(history);
         }}
       >
         Edit

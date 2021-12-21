@@ -11,7 +11,7 @@ import useProtectedPage from '../../Hooks/useProtectedPage'
 const AddressPage = () => {
   useProtectedPage()
   const token = localStorage.getItem("token")
-  const [form, onChange, clear] = useForm({
+  const { form, onChangeInput, clear } = useForm({
     street: "",
     number: "",
     neighbourhood: "",
@@ -49,7 +49,7 @@ const AddressPage = () => {
             type={"text"}
             name={"street"}
             value={form.street}
-            onChange={onChange}
+            onChange={onChangeInput}
             label={"Rua/Avenida:"}
             variant={"outlined"}
             margin={"normal"}
@@ -60,7 +60,7 @@ const AddressPage = () => {
             type={"number"}
             name={"number"}
             value={form.number}
-            onChange={onChange}
+            onChange={onChangeInput}
             label={"Número:"}
             variant={"outlined"}
             margin={"normal"}
@@ -71,7 +71,7 @@ const AddressPage = () => {
             type={"text"}
             name={"neighbourhood"}
             value={form.neighbourhood}
-            onChange={onChange}
+            onChange={onChangeInput}
             label={"Bairro:"}
             variant={"outlined"}
             margin={"normal"}
@@ -82,7 +82,7 @@ const AddressPage = () => {
             type={"text"}
             name={"state"}
             value={form.state}
-            onChange={onChange}
+            onChange={onChangeInput}
             label={"Estado:"}
             variant={"outlined"}
             margin={"normal"}
@@ -93,7 +93,7 @@ const AddressPage = () => {
             type={"text"}
             name={"city"}
             value={form.city}
-            onChange={onChange}
+            onChange={onChangeInput}
             label={"Cidade:"}
             variant={"outlined"}
             margin={"normal"}
@@ -104,7 +104,7 @@ const AddressPage = () => {
             type={"text"}
             name={"complement"}
             value={form.complement}
-            onChange={onChange}
+            onChange={onChangeInput}
             label={"Complemento:"}
             variant={"outlined"}
             margin={"normal"}

@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import useRequestData from "../../Hooks/useRequestData";
 import { BASE_URL } from "../../Constants/Url";
 import { goToDetails } from "../../Router/Coordinate";
-import { useHistory } from "react-router-dom";
 
 const Restaurants = () => {
 

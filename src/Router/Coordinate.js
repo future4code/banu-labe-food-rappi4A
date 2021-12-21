@@ -22,7 +22,7 @@ export const goToSignUp = (history) => {
   history.push("/cadastro");
 };
 
-export const goToToEdit = (history) => {
+export const goToEdit = (history) => {
   history.push("/to-edit");
 };
 // export const goToFeed = (history) => {
