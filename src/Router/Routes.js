@@ -9,6 +9,7 @@ import Profile from "../Sessions/Profile/Profile";
 import RegisterAdress from "../Sessions/RegisterAdress/RegisterAdress";
 import Restaurants from "../Sessions/Restaurants/Restaurants";
 import RestaurantsDetails from "../Sessions/RestaurantsDetails/RestaurantsDetails";
+import EditAddress from "../Sessions/ToEdit/EditAddress"
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -39,7 +40,7 @@ export const Router = () => {
         </Route>
 
         <Route exact path={"/restaurant/:restaurantId"}>
-          <RestaurantsDetails/>
+          <RestaurantsDetails />
         </Route>
 
         {/* <Route exact path={"/register-adress"}>

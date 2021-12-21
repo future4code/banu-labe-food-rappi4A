@@ -12,7 +12,7 @@ import Header from "../../Header/Header";
 
 const SignUp = () => {
   useUnprotectedPage();
-  const [form, onChange, clear] = useForm({
+  const { form, onChangeInput, clear } = useForm({
     name: "",
     email: "",
     cpf: "",
@@ -55,7 +55,7 @@ const SignUp = () => {
               type={"text"}
               name={"name"}
               value={form.name}
-              onChange={onChange}
+              onChange={onChangeInput}
               label={"Nome:"}
               variant={"outlined"}
               margin={"normal"}
@@ -67,7 +67,7 @@ const SignUp = () => {
               type={"email"}
               name={"email"}
               value={form.email}
-              onChange={onChange}
+              onChange={onChangeInput}
               label={"E-mail:"}
               variant={"outlined"}
               margin={"normal"}
@@ -79,7 +79,7 @@ const SignUp = () => {
               type={"text"}
               name={"cpf"}
               value={form.cpf}
-              onChange={onChange}
+              onChange={onChangeInput}
               label={"CPF:"}
               variant={"outlined"}
               margin={"normal"}
@@ -91,7 +91,7 @@ const SignUp = () => {
               type={"password"}
               name={"password"}
               value={form.password}
-              onChange={onChange}
+              onChange={onChangeInput}
               label={"Senha:"}
               variant={"outlined"}
               margin={"normal"}
@@ -102,7 +102,7 @@ const SignUp = () => {
               type={"password"}
               name={"confirm"}
               value={form.confirm}
-              onChange={onChange}
+              onChange={onChangeInput}
               label={"Confirmar:"}
               variant={"outlined"}
               margin={"normal"}
