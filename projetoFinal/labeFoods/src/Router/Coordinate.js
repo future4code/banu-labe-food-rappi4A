@@ -33,7 +33,6 @@ export const goToBack = (history) => {
   history.goBack();
 };
 
-export const goToDetails = (history, restaurantId) => {
-  history.push(`/restaurant/${restaurantId}`)
-}
-
+export const goToEditAddress = (history) => {
+  history.push("/editarEndereco");
+};

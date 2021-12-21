@@ -15,7 +15,7 @@ export const LoginContainer = styled.div`
   margin-top: 120px;
   img {
     width: 30vw;
-    max-width: 100px;
+    max-width: 350px;
   }
   button {
     width: 80vw;

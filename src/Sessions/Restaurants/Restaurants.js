@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import GlobalStateContext from "../../Context/GlobalStateContext";
+import { goToProfile } from "../../Router/Coordinate";
+import { useHistory } from "react-router-dom";
 import useRequestData from "../../Hooks/useRequestData";
 import { BASE_URL } from "../../Constants/Url";
 import { goToDetails } from "../../Router/Coordinate";
 import { useHistory } from "react-router-dom";
-
-
-
 
 const Restaurants = () => {
 
@@ -25,15 +24,13 @@ const Restaurants = () => {
                 <img src={rl.logoUrl} onClick={() => {goToDetails(history, rl.id)}}></img>
                 <p>Tempo de entrega: {rl.deliveryTime} minutos</p>
             </div>
-            )
+          );
         })}
-            <button>Home</button>
-            <button>Cart</button>
-            <button>Profile</button>
-        </div>
-        
-    )
-            
-}
+      <button>Home</button>
+      <button>Cart</button>
+      <button onClick={() => goToProfile(history)}>Profile</button>
+    </div>
+  );
+};
 
-export default Restaurants
+export default Restaurants;
