@@ -36,7 +36,7 @@ export const Router = () => {
         </Route>
 
         <Route exact path={"/restaurant"}>
-
+          <Restaurants />
         </Route>
 
         <Route exact path={"/restaurant/:restaurantId"}>

@@ -29,6 +29,12 @@ const LoginForm = () => {
                 localStorage.setItem("token", res.data.token);
                 clear();
                 setIsloading(false);
+                if (token) {
+                    history.push("/restaurant")
+                } else {
+                    history.push("/login")
+                }
+                alert("Login Efetuado!");
             })
             .catch((err) => {
                 alert("Erro no login!");
