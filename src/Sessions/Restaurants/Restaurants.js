@@ -9,6 +9,7 @@ import { goToDetails } from "../../Router/Coordinate";
 const Restaurants = () => {
 
     const {restaurantList, setRestaurantList} = useContext(GlobalStateContext)
+    
 
     const history = useHistory()
 
