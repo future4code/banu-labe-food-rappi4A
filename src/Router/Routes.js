@@ -4,7 +4,6 @@ import Cart from "../Sessions/Cart/Cart";
 import Login from "../Sessions/Login/LoginPage";
 import SignUpPage from "../Sessions/SingUp/SignUpPage";
 import ToEdit from "../Sessions/ToEdit/ToEdit";
-import Search from "../Sessions/Search/Search";
 import Profile from "../Sessions/Profile/Profile";
 import RegisterAdress from "../Sessions/RegisterAdress/RegisterAdress";
 import Restaurants from "../Sessions/Restaurants/Restaurants";
@@ -47,9 +46,9 @@ export const Router = () => {
           <RegisterAdress />
         </Route> */}
 
-        <Route exact path={"/search"}>
+        {/* <Route exact path={"/search"}>
           <Search />
-        </Route>
+        </Route> */}
 
         <Route exact path="/cadastro">
           <SignUpPage />

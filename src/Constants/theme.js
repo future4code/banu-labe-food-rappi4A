@@ -7,6 +7,9 @@ const theme = createTheme({
             main: primaryColor,
             ContrastText: "white"
         },
+        secondary: {
+            main: neutralColor,
+        },
         text: {
             primary: neutralColor
         }

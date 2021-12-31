@@ -1,4 +1,4 @@
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import React from "react";
 import logo from "../../assets/logo.png";
 import LoginForm from "./LoginForm";

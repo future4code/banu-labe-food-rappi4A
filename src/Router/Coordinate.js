@@ -14,9 +14,9 @@ export const goToAddress = (history) => {
   history.push("/endereço");
 };
 
-export const goToSearch = (history) => {
-  history.push("/search");
-};
+// export const goToSearch = (history) => {
+//   history.push("/search");
+// };
 
 export const goToSignUp = (history) => {
   history.push("/cadastro");

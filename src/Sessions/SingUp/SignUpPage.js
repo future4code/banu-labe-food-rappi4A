@@ -5,7 +5,7 @@ import logoFutureEatsInvert from "../../assets/logoFutureEatsInvert.png";
 import { ScreenContainer, InputsContainer, TextSignUp } from "./styled";
 import axios from "axios";
 import { goToAddress } from "../../Router/Coordinate";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import useUnprotectedPage from "../../Hooks/useUnprotectedPage";
 import { BASE_URL } from '../../Constants/Url'
 import Header from "../../Header/Header";

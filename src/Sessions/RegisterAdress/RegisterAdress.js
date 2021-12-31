@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png'
 import axios from 'axios'
 import { BASE_URL } from '../../Constants/Url'
 import { Button, TextField } from '@material-ui/core'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 import useProtectedPage from '../../Hooks/useProtectedPage'
 
 const AddressPage = () => {
