@@ -42,6 +42,7 @@ const GlobalState = (props) => {
     setRestaurantList,
     profileList,
     setProfileList,
+    getRestaurants
   };
 
   return (
