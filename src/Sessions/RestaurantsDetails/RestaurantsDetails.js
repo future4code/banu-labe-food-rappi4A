@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import GlobalStateContext from "../../Context/GlobalStateContext";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import { BASE_URL } from "../../Constants/Url";
 import axios from "axios";
+import { goToCart } from "../../Router/Coordinate";
 
-const RestaurantsDetails = () => {
-  
+
+const RestaurantsDetails = (props) => {
+
+  const { makeCart, } = useContext(GlobalStateContext)
+
+
   const params = useParams();
+  const history = useHistory()
   const [restaurantsDetails, setRestaurantsDetails] = useState()
+  const [qntd, setQntd] = useState(1)
 
   const headers = {
     headers: {
@@ -19,32 +28,56 @@ const RestaurantsDetails = () => {
 
     getDetails()
 
-}, [])
+  }, [])
 
- const getDetails = () => {
-    axios.get(`${BASE_URL}/restaurants/${params.restaurantId}`, headers )
-    .then((res) => {
-      setRestaurantsDetails(res.data.restaurant)
-      console.log(res.data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}
+  const getDetails = () => {
+    axios.get(`${BASE_URL}/restaurants/${params.restaurantId}`, headers)
+      .then((res) => {
+        setRestaurantsDetails(res.data.restaurant)
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  // const addToCart = (rd) => {
+  //   const cartIndex = restaurantsDetails.findIndex(
+  //     (item) => item.name === rd.name
+  //   );
+
+  //   const newCartList = [...Cart, restaurantsDetails[cartIndex]];
+
+  //   setCart(newCartList);
+
+  //   alert("Pokemon adicionado com sucesso!");
+  // };
 
   return (
     <div>
-    {restaurantsDetails && restaurantsDetails.products.map((rd) => {
-      return <div>
 
-        <p>{rd.name}</p>
-        <img src={rd.photoUrl}></img>
-        <p>{rd.description}</p>
-        <p>{rd.price}</p>
+      <button onClick={() => goToCart(history)}> Ir para Carrinho </button>
 
-      </div>
-    })}
-    
+      {restaurantsDetails && restaurantsDetails.products.map((rd) => {
+        return <div>
+
+          <p>{rd.name}</p>
+          <img src={rd.photoUrl}></img>
+          <p>{rd.description}</p>
+          <p>{rd.price}</p>
+
+          <div>
+            <button onClick={() => { makeCart(props.product, qntd, props.resID) }}> Adicionar ao Carrinho </button>
+            {/* <button onClick={() => addToCart(rd)}>
+              {" "}
+              Adicionar no Carrinho{" "}
+            </button> */}
+          </div>
+
+        </div>
+      })}
+
+
 
     </div>
   )
@@ -55,4 +88,4 @@ const RestaurantsDetails = () => {
 }
 
 
-    export default RestaurantsDetails
+export default RestaurantsDetails
