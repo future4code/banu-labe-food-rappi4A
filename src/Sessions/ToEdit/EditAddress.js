@@ -11,7 +11,7 @@ const Barra = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-  background-color: #fff;
+  background-color: #fffbf4;
 `;
 const H1 = styled.div`
   width: 175px;
@@ -29,12 +29,19 @@ const input = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
-  color: #000;
+  background-color: #fffbf4;
 `;
 const EditarEndereço = styled.div`
-  width: 360px;
-  height: 640px;
+  width: 100vw;
+  height: 64vhvh;
   padding: 0 0 294px;
+  background-color: white;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: column;
+  align-items: center;
+  background-color: #fffbf4;
 `;
 
 const Retangular = styled.div`
@@ -44,6 +51,7 @@ const Retangular = styled.div`
   padding: 19px 48px 19px 16px;
   border-radius: 4px;
   border: solid 1px #b8b8b8;
+  background-color: #fffbf4;
 `;
 
 const label = styled.div`
@@ -58,13 +66,6 @@ const label = styled.div`
   line-height: normal;
   letter-spacing: -0.29px;
   color: #b8b8b8;
-`;
-
-const div = styled.div`
-  display: flex;
-  flex-direction: center;
-  align-items: center;
-  justify-content: space-between;
 `;
 
 const Quadro = styled.div`
@@ -116,83 +117,83 @@ const EditAddress = () => {
   };
 
   return (
-    <div>
+    <EditarEndereço>
       <Barra>
         <H1>Endereço</H1>
       </Barra>
-      <EditarEndereço>
-        <form onSubmit={updateAddress}>
-          <Retangular>
-            <label>Rua:</label> <br></br>
-            <input
-              name="street"
-              value={form.street}
-              placeholder={"Rua Alessandra Vieira"}
-              onChange={onChangeInput}
-              required
-            />
-          </Retangular>
 
-          <Retangular>
-            <label>Número:</label> <br></br>
-            <input
-              name="number"
-              placeholder={"42"}
-              value={form.number}
-              onChange={onChangeInput}
-              required
-              type={"number"}
-            />
-          </Retangular>
+      <form onSubmit={updateAddress}>
+        <Retangular>
+          <label>Rua:</label> <br></br>
+          <input
+            name="street"
+            value={form.street}
+            placeholder={"Rua Alessandra Vieira"}
+            onChange={onChangeInput}
+            required
+          />
+        </Retangular>
 
-          <Retangular>
-            <label>Bairro:</label> <br></br>
-            <input
-              name="neighbourhood"
-              placeholder={"Santana"}
-              value={form.neighbourhood}
-              onChange={onChangeInput}
-              required
-            />
-          </Retangular>
-          <Retangular>
-            <label>Cidade:</label> <br></br>
-            <input
-              name="city"
-              placeholder={"São Paulo"}
-              value={form.city}
-              onChange={onChangeInput}
-              required
-            />
-          </Retangular>
+        <Retangular>
+          <label>Número:</label> <br></br>
+          <input
+            name="number"
+            placeholder={"42"}
+            value={form.number}
+            onChange={onChangeInput}
+            required
+            type={"number"}
+          />
+        </Retangular>
 
-          <Retangular>
-            <label>Estado:</label> <br></br>
-            <input
-              name="state"
-              placeholder={"Estado"}
-              value={form.state}
-              onChange={onChangeInput}
-              required
-            />
-          </Retangular>
+        <Retangular>
+          <label>Bairro:</label> <br></br>
+          <input
+            name="neighbourhood"
+            placeholder={"Santana"}
+            value={form.neighbourhood}
+            onChange={onChangeInput}
+            required
+          />
+        </Retangular>
+        <Retangular>
+          <label>Cidade:</label> <br></br>
+          <input
+            name="city"
+            placeholder={"São Paulo"}
+            value={form.city}
+            onChange={onChangeInput}
+            required
+          />
+        </Retangular>
 
-          <Retangular>
-            <label>Complemento:</label> <br></br>
-            <input
-              name="complement"
-              placeholder={"Apto./Bloco"}
-              value={form.complement}
-              onChange={onChangeInput}
-              required
-            />
-          </Retangular>
-          <Quadro>
-            <button>Enviar</button>
-          </Quadro>
-        </form>
-      </EditarEndereço>
-    </div>
+        <Retangular>
+          <label>Estado:</label> <br></br>
+          <input
+            name="state"
+            placeholder={"Estado"}
+            value={form.state}
+            onChange={onChangeInput}
+            required
+          />
+        </Retangular>
+
+        <Retangular>
+          <label>Complemento:</label> <br></br>
+          <input
+            name="complement"
+            placeholder={"Apto./Bloco"}
+            value={form.complement}
+            onChange={onChangeInput}
+            required
+          />
+        </Retangular>
+        <Quadro>
+          <button>Salvar</button>
+          <button>Voltar</button>
+        </Quadro>
+      </form>
+    </EditarEndereço>
   );
 };
 

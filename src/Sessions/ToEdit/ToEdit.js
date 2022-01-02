@@ -20,19 +20,26 @@ const BackImg = styled.div`
 `;
 
 const Bar = styled.div`
-  width: 360px;
-  height: 64px;
+  width: 20vw;
+  height: 10vh;
   margin: 0 0 16px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-  background-color: #fff;
+  background-color: #fffbf4;
 `;
 
 const EditarCadastro = styled.div`
-  width: 360px;
-  height: 640px;
+  width: 100vw;
+  height: 64vhvh;
   padding: 0 0 294px;
+  background-color: white;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: column;
+  align-items: center;
+  background-color: #fffbf4;
 `;
 
 const Reactangle = styled.div`
@@ -42,6 +49,7 @@ const Reactangle = styled.div`
   padding: 19px 48px 19px 16px;
   border-radius: 4px;
   border: solid 1px #b8b8b8;
+  background-color: #fffbf4;
 `;
 
 const input = styled.div`
@@ -54,7 +62,7 @@ const input = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
-  color: #000;
+  color: #fffbf4;
 `;
 
 const label = styled.div`
@@ -90,7 +98,7 @@ const button = styled.div`
   line-height: normal;
   letter-spacing: -0.39px;
   text-align: center;
-  color: #000;
+  color: #fffbf4;
 `;
 
 const ToEdit = () => {
@@ -131,7 +139,7 @@ const ToEdit = () => {
     <EditarCadastro>
       <Bar>
         <Title>Editar</Title>
-        <BackImg src={back} alt="back" />
+        <BackImg src={back} alt="back"></BackImg>
       </Bar>
 
       <form onSubmit={updateProfile}>
