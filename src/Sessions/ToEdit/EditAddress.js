@@ -11,7 +11,7 @@ const Barra = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-  background-color: #fffbf4;
+  background-color: #b8b8b8;
 `;
 const H1 = styled.div`
   width: 175px;
@@ -29,7 +29,7 @@ const input = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
-  background-color: #fffbf4;
+  background-color: #b8b8b8;
 `;
 const EditarEndereço = styled.div`
   width: 100vw;
@@ -41,7 +41,7 @@ const EditarEndereço = styled.div`
   flex-direction: column;
   justify-content: column;
   align-items: center;
-  background-color: #fffbf4;
+  background-color: #b8b8b8;
 `;
 
 const Retangular = styled.div`
@@ -51,7 +51,7 @@ const Retangular = styled.div`
   padding: 19px 48px 19px 16px;
   border-radius: 4px;
   border: solid 1px #b8b8b8;
-  background-color: #fffbf4;
+  background-color: #f3f3f3;
 `;
 
 const label = styled.div`
@@ -69,11 +69,17 @@ const label = styled.div`
 `;
 
 const Quadro = styled.div`
-  width: 328px;
-  height: 42px;
+  width: 40 vw;
+  height: 5vh;
   padding: 12px 16px;
   border-radius: 2px;
-  background-color: var(--dark-peach);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #e86e5a;
+  color: black;
 `;
 const EditAddress = () => {
   const { form, onChangeInput, clear } = useForm({

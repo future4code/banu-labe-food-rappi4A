@@ -26,7 +26,7 @@ const Bar = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-  background-color: #fffbf4;
+  background-color: #b8b8b8;
 `;
 
 const EditarCadastro = styled.div`
@@ -39,7 +39,7 @@ const EditarCadastro = styled.div`
   flex-direction: column;
   justify-content: column;
   align-items: center;
-  background-color: #fffbf4;
+  background-color: #b8b8b8;
 `;
 
 const Reactangle = styled.div`
@@ -49,7 +49,7 @@ const Reactangle = styled.div`
   padding: 19px 48px 19px 16px;
   border-radius: 4px;
   border: solid 1px #b8b8b8;
-  background-color: #fffbf4;
+  background-color: #f3f3f3;
 `;
 
 const input = styled.div`
@@ -62,7 +62,8 @@ const input = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
-  color: #fffbf4;
+  color: black;
+  background-color: #b8b8b8;
 `;
 
 const label = styled.div`
@@ -80,11 +81,17 @@ const label = styled.div`
 `;
 
 const Retangulo = styled.div`
-  width: 328px;
-  height: 42px;
+  width: 40 vw;
+  height: 5vh;
   padding: 12px 16px;
   border-radius: 2px;
-  background-color: var(--dark-peach);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #e86e5a;
+  color: black;
 `;
 
 const button = styled.div`
