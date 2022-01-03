@@ -4,24 +4,17 @@ import { goToProfile } from "../../Router/Coordinate";
 import React, { useState, useEffect } from "react";
 import useForm from "../../Hooks/useForm";
 import styled from "styled-components";
-import back from "../../assets/back.png";
 
 const Title = styled.div`
-  width: 175px;
-  height: 44px;
+  width: 20vw;
+  height: 10vh;
   margin: 20px 92px 0 54px;
   padding: 13px 67.5px 12px;
 `;
-const BackImg = styled.div`
-  width: 23px;
-  height: 24px;
-  margin: 10px 54px 10px 16px;
-  object-fit: contain;
-`;
 
 const Bar = styled.div`
-  width: 20vw;
-  height: 10vh;
+  width: 360px;
+  height: 64px;
   margin: 0 0 16px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -31,7 +24,7 @@ const Bar = styled.div`
 
 const EditarCadastro = styled.div`
   width: 100vw;
-  height: 64vhvh;
+  height: 66vh;
   padding: 0 0 294px;
   background-color: white;
   display: flex;
@@ -146,7 +139,6 @@ const ToEdit = () => {
     <EditarCadastro>
       <Bar>
         <Title>Editar</Title>
-        <BackImg src={back} alt="back"></BackImg>
       </Bar>
 
       <form onSubmit={updateProfile}>

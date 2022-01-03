@@ -33,7 +33,7 @@ const input = styled.div`
 `;
 const EditarEndereço = styled.div`
   width: 100vw;
-  height: 64vhvh;
+  height: 70vh;
   padding: 0 0 294px;
   background-color: white;
   display: flex;
@@ -81,6 +81,7 @@ const Quadro = styled.div`
   background-color: #e86e5a;
   color: black;
 `;
+
 const EditAddress = () => {
   const { form, onChangeInput, clear } = useForm({
     street: "",
