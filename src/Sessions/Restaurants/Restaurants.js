@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import useRequestData from "../../Hooks/useRequestData";
 import { BASE_URL } from "../../Constants/Url";
 import { goToDetails } from "../../Router/Coordinate";
+import Search from '../Search/Search'
 
 const Restaurants = () => {
 
@@ -16,7 +17,7 @@ const Restaurants = () => {
 
     return (
         <div>
-            <input></input>
+          <Search />
         {restaurantList && restaurantList.map((rl) => {
             return (
             <div>

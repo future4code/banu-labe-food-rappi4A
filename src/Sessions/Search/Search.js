@@ -1,98 +1,62 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import useForm from "../../Hooks/useForm"
-import { 
-  SearchField,
-  SearchContainer,
-  AllTypeContainer,
-  FoodTypeContainer,
-  FoodTypes
- } from "./style"
- import Restaurants from "../Restaurants/Restaurants"
- import useRequestData from "../../Hooks/useRequestData";
+import { DivSearch } from "./style"
+ import SearchIcon from '@material-ui/icons/Search';
+ import { goToDetails } from "../../Router/Coordinate";
+ import GlobalStateContext from "../../Context/GlobalStateContext";
+
 
 
 const Search = () => {
   const history = useHistory();
 
-  const { form, onChangeForm } = useForm({
-    search: "",
-  });
-  const [filtered, setFiltered] = useState(false);
-  const [RestaurantesFiltrados, setRestaurantesFiltrados] = useState([]);
-  const token = localStorage.getItem("token");
-  const { data } = useRequestData("/restaurants", token);
+  const [search, setSearch] = useState("");
+  const [categorySearch, setCategorySearch] = useState("");
+  const [clearFilter, setClearFilter] = useState(false);
+  const {restaurantList, setRestaurantList} = useContext(GlobalStateContext)
 
-  const searchResult =
-  form.search &&
-  data.restaurants?.filter((item) => {
-    return item.name.toLowerCase().includes(form.search.toLowerCase());
-  });
-
-  let nameRestaurants =
-    form.search && searchResult.length > 0
-      ? searchResult?.map((restaurant, index) => {
-          return <Restaurants restaurant={restaurant} />;
-        })
-      : form.search &&
-        !searchResult.length && (
-          <p>Busca não coincide com nenhum restaurante :(</p>
-        );
-
-  const filteredTypes = [];
-  let typesOfFood =
-    data &&
-    data.restaurants &&
-    data.restaurants.map((restaurant) => {
-      if (restaurant.category !== filteredTypes[restaurant.category]) {
-        filteredTypes.push(restaurant.category);
-        filteredTypes[restaurant.category] = [];
-        filteredTypes[restaurant.category].push(restaurant);
-      }
-
-      return (
-        <FoodTypeContainer
-          onClick={() => onClickCategorias(restaurant.category)}
-        >
-          <FoodTypes>
-            <strong>{restaurant.category}</strong>
-          </FoodTypes>
-        </FoodTypeContainer>
-      );
-    });
-
-  const filteredRestaurants = [];
-  const onClickCategorias = (selectCategory) => {
-    data.restaurants.forEach((restaurant) => {
-      if (restaurant.category === selectCategory) {
-        filteredRestaurants.push(restaurant);
-      }
-    });
-    setFiltered(true);
-    setRestaurantesFiltrados(filteredRestaurants);
+  const handleSearch = (event) => {
+    setSearch(event.target.value.toLowerCase());
   };
 
-  const renderRestaurants = RestaurantesFiltrados.map((restaurant) => {
-    return <Restaurants key={restaurant.id} restaurant={restaurant} />;
-  });
+  const clearFilters = () => {
+    setSearch("");
+    setCategorySearch("");
+    setClearFilter(false);
+  };
 
+  
   return (
     <div>
-   <SearchContainer>
-            <SearchField
-              placeholder="Restaurantes"
-              type="text"
-              onChange={onChangeForm}
-              value={form.search}
-              name={"search"}
-              variant="outlined"
-            />
-          </SearchContainer>
-          <AllTypeContainer>
-            <FoodTypeContainer>{typesOfFood}</FoodTypeContainer>
-          </AllTypeContainer>
+  <DivSearch>
+        <SearchIcon color="secondary" />
+        <input 
+        placeholder="Restaurantes" 
+        value={search}
+        onChange={handleSearch} />
+      <button onClick={clearFilters}>Limpar Filtros</button>
+  </DivSearch>
+  {restaurantList && restaurantList
+  .filter(rl => {
+    return rl.name.includes(search)
+  })
+  .filter((rl) => {
+    return rl.category
+      .toLowerCase()
+      .includes(categorySearch.toLowerCase());
+  })
+  .map((rl) => {
+            return (
+            <div>
+                <p>{rl.name}</p>
+                <img src={rl.logoUrl} onClick={() => {goToDetails(history, rl.id)}}></img>
+                <p>Tempo de entrega: {rl.deliveryTime} minutos</p>
+            </div>
+          );
+        })}
     </div>
   );
 };
 
 export default Search;
+
