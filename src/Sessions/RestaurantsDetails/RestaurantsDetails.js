@@ -9,14 +9,14 @@ import { goToCart } from "../../Router/Coordinate";
 
 const RestaurantsDetails = (props) => {
 
-  const { makeCart, } = useContext(GlobalStateContext)
+  // const { makeCart, cart } = useContext(GlobalStateContext)
 
 
   const params = useParams();
   const history = useHistory()
   const [restaurantsDetails, setRestaurantsDetails] = useState()
-  const [qntd, setQntd] = useState(1)
-
+  // const [qntd, setQntd] = useState(1)
+  const [cart, setCart] = useState([])
   const headers = {
     headers: {
       auth: localStorage.getItem("token")
@@ -41,17 +41,18 @@ const RestaurantsDetails = (props) => {
       })
   }
 
-  // const addToCart = (rd) => {
-  //   const cartIndex = restaurantsDetails.findIndex(
-  //     (item) => item.name === rd.name
-  //   );
+  const addToCart = (rd) => {
+    const cartIndex = restaurantsDetails.findIndex(
+      (item) => item.name === rd.name
+    );
 
-  //   const newCartList = [...Cart, restaurantsDetails[cartIndex]];
+    const newCartList = [...cart, restaurantsDetails[cartIndex]];
 
-  //   setCart(newCartList);
+    setCart(newCartList);
 
-  //   alert("Pokemon adicionado com sucesso!");
-  // };
+    alert("Produto adicionado com sucesso!");
+  };
+
 
   return (
     <div>
@@ -67,11 +68,11 @@ const RestaurantsDetails = (props) => {
           <p>{rd.price}</p>
 
           <div>
-            <button onClick={() => { makeCart(props.product, qntd, props.resID) }}> Adicionar ao Carrinho </button>
-            {/* <button onClick={() => addToCart(rd)}>
+            {/* <button onClick={() => { makeCart(props.product, qntd, props.resID) }}> Adicionar ao Carrinho </button> */}
+            <button onClick={() => addToCart(rd)}>
               {" "}
               Adicionar no Carrinho{" "}
-            </button> */}
+            </button>
           </div>
 
         </div>
