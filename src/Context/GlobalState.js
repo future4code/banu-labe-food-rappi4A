@@ -20,7 +20,7 @@ const GlobalState = (props) => {
   }, [restaurantList]);
 
 
-  
+
 
   const getRestaurants = () => {
     axios
@@ -34,9 +34,6 @@ const GlobalState = (props) => {
   };
 
 
-
-
-
   const data = {
     restaurantList,
     setRestaurantList,
@@ -44,6 +41,7 @@ const GlobalState = (props) => {
     setProfileList,
     getRestaurants
   };
+
 
   return (
     <GlobalStateContext.Provider value={data}>
