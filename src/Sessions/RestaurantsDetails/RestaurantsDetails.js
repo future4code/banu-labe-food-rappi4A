@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import GlobalStateContext from "../../Context/GlobalStateContext";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import { BASE_URL } from "../../Constants/Url";
@@ -9,13 +8,10 @@ import { goToCart } from "../../Router/Coordinate";
 
 const RestaurantsDetails = (props) => {
 
-  // const { makeCart, cart } = useContext(GlobalStateContext)
-
 
   const params = useParams();
   const history = useHistory()
   const [restaurantsDetails, setRestaurantsDetails] = useState()
-  // const [qntd, setQntd] = useState(1)
   const [cart, setCart] = useState([])
   const headers = {
     headers: {
@@ -68,7 +64,6 @@ const RestaurantsDetails = (props) => {
           <p>{rd.price}</p>
 
           <div>
-            {/* <button onClick={() => { makeCart(props.product, qntd, props.resID) }}> Adicionar ao Carrinho </button> */}
             <button onClick={() => addToCart(rd)}>
               {" "}
               Adicionar no Carrinho{" "}
