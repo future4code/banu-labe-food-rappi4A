@@ -37,6 +37,7 @@ const RestaurantsDetails = (props) => {
       })
   }
 
+
   const addToCart = (rd) => {
     const cartIndex = restaurantsDetails.findIndex(
       (item) => item.name === rd.name
@@ -47,6 +48,7 @@ const RestaurantsDetails = (props) => {
     setCart(newCartList);
 
     alert("Produto adicionado com sucesso!");
+
   };
 
 
