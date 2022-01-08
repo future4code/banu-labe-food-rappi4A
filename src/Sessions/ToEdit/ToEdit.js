@@ -4,12 +4,17 @@ import { goToProfile } from "../../Router/Coordinate";
 import React, { useState, useEffect } from "react";
 import useForm from "../../Hooks/useForm";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const Title = styled.div`
   width: 20vw;
   height: 10vh;
   margin: 20px 92px 0 54px;
   padding: 13px 67.5px 12px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
 `;
 
 const Bar = styled.div`
@@ -19,7 +24,7 @@ const Bar = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-  background-color: #b8b8b8;
+  background-color: white;
 `;
 
 const EditarCadastro = styled.div`
@@ -32,7 +37,7 @@ const EditarCadastro = styled.div`
   flex-direction: column;
   justify-content: column;
   align-items: center;
-  background-color: #b8b8b8;
+  background-color: white;
 `;
 
 const Reactangle = styled.div`
@@ -42,7 +47,7 @@ const Reactangle = styled.div`
   padding: 19px 48px 19px 16px;
   border-radius: 4px;
   border: solid 1px #b8b8b8;
-  background-color: #f3f3f3;
+  background-color: white;
 `;
 
 const input = styled.div`
@@ -70,7 +75,7 @@ const label = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.29px;
-  color: #b8b8b8;
+  color: white;
 `;
 
 const Retangulo = styled.div`
@@ -102,6 +107,8 @@ const button = styled.div`
 `;
 
 const ToEdit = () => {
+  const history = useHistory();
+
   const { form, onChangeInput, clear } = useForm({
     name: "",
     email: "",
@@ -137,13 +144,14 @@ const ToEdit = () => {
 
   return (
     <EditarCadastro>
+      <img src={logo} alt="logo Rappi4" />
       <Bar>
         <Title>Editar</Title>
       </Bar>
 
       <form onSubmit={updateProfile}>
         <Reactangle>
-          <label>Nome:</label>
+          <label>Nome:</label> <br></br>
           <input
             name="name"
             value={form.name}
@@ -154,7 +162,7 @@ const ToEdit = () => {
         </Reactangle>
 
         <Reactangle>
-          <label>Email:</label>
+          <label>Email:</label> <br></br>
           <input
             name="email"
             placeholder={"bruna_o@gmail.com"}
@@ -165,7 +173,7 @@ const ToEdit = () => {
         </Reactangle>
 
         <Reactangle>
-          <label>CPF:</label>
+          <label>CPF:</label> <br></br>
           <input
             name="cpf"
             placeholder={"333.333.333-33"}
@@ -177,7 +185,13 @@ const ToEdit = () => {
 
         <Retangulo>
           <button>Salvar</button>
-          <button>Voltar</button>
+          <button
+            onClick={() => {
+              goToProfile(history);
+            }}
+          >
+            Voltar
+          </button>
         </Retangulo>
       </form>
     </EditarCadastro>
