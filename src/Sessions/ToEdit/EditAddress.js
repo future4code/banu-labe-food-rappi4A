@@ -3,6 +3,9 @@ import useForm from "../../Hooks/useForm";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/Url";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+import { goToProfile } from "../../Router/Coordinate";
+import logo from "../../assets/logo.png";
 
 const Barra = styled.div`
   width: 360px;
@@ -11,13 +14,16 @@ const Barra = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-  background-color: #b8b8b8;
+  background-color: white;
 `;
 const H1 = styled.div`
   width: 175px;
   height: 44px;
   margin: 20px 92px 0 54px;
   padding: 13px 67.5px 12px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
 `;
 const input = styled.div`
   width: 264px;
@@ -29,7 +35,7 @@ const input = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;
-  background-color: #b8b8b8;
+  background-color: white;
 `;
 const EditarEndereço = styled.div`
   width: 100vw;
@@ -41,7 +47,7 @@ const EditarEndereço = styled.div`
   flex-direction: column;
   justify-content: column;
   align-items: center;
-  background-color: #b8b8b8;
+  background-color: white;
 `;
 
 const Retangular = styled.div`
@@ -51,7 +57,7 @@ const Retangular = styled.div`
   padding: 19px 48px 19px 16px;
   border-radius: 4px;
   border: solid 1px #b8b8b8;
-  background-color: #f3f3f3;
+  background-color: white;
 `;
 
 const label = styled.div`
@@ -65,7 +71,7 @@ const label = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.29px;
-  color: #b8b8b8;
+  color: white;
 `;
 
 const Quadro = styled.div`
@@ -83,6 +89,8 @@ const Quadro = styled.div`
 `;
 
 const EditAddress = () => {
+  const history = useHistory();
+
   const { form, onChangeInput, clear } = useForm({
     street: "",
     number: "",
@@ -125,6 +133,7 @@ const EditAddress = () => {
 
   return (
     <EditarEndereço>
+       <img src={logo} alt="logo Rappi4" />
       <Barra>
         <H1>Endereço</H1>
       </Barra>
@@ -137,7 +146,11 @@ const EditAddress = () => {
             value={form.street}
             placeholder={"Rua Alessandra Vieira"}
             onChange={onChangeInput}
+            variant={"outlined"}
+            fullWidth
+            margin={"normal"}
             required
+            type={"street"}
           />
         </Retangular>
 
@@ -197,7 +210,13 @@ const EditAddress = () => {
         </Retangular>
         <Quadro>
           <button>Salvar</button>
-          <button>Voltar</button>
+          <button
+            onClick={() => {
+              goToProfile(history);
+            }}
+          >
+            Voltar
+          </button>
         </Quadro>
       </form>
     </EditarEndereço>
