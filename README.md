@@ -8,6 +8,19 @@ Nome dos integrantes:
 - Julia Zielke
 - Bruno Luan
 
+## Objetivo do Projeto
+
+A proposta foi desenvolver uma aplicativo de restaurantes parecido com o Ifood, que recebe dados de uma API, as telas devem exibir informações de login, cadastro, restaurantes, perfil, pratos, carrinho e endereço de entrega.
+Para  realização deste projeto foram utilizados:
+
+* Requisições de API's,
+* Componentes funcionais,
+* hooks 
+* Global states
+* Router
+* Styled-components e 
+* material MUI
+
 Link do Surge: https://aback-weather.surge.sh/login
 
 O que funciona:
